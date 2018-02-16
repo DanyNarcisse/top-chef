@@ -4,11 +4,12 @@ var request = require('request');
 var cheerio = require('cheerio');
 var app     = express();
 
+//https://www.lafourchette.com/recherche/autocomplete?searchText=paul+bocuse&localeCode=fr
 urlPage = 'https://www.lafourchette.com/search-refine/Les%20Mets%20de%20Mo';
 
 request(urlPage, function(error, response, html){
     if(!error){
-
+        
         var $ = cheerio.load(html);
         $('.resultItem-information').each(function(){
 
