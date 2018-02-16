@@ -40,8 +40,8 @@ for (var i = 1; i<36; i++){
                         json.postCode = postCode;
                     });
 
-                    fs.appendFile('output.json', JSON.stringify(json)+"\r\n", function(err){
-                        console.log('copy in output.json' + ' page: ' +  String(json.title));
+                    fs.appendFile('data-michelin.json', JSON.stringify(json)+"\r\n", function(err){
+                        console.log('Added to data-michelin.json' + ' page: ' +  String(json.title));
 
                     });
                 });
