@@ -5,15 +5,15 @@ let punctuation = ['\'', ' ', '-'];
 let regExp = new RegExp('[' + punctuation.join('') + ']', 'g')
 let similarTarget = {} //found restaurants
 
-//Reading lines from scrapped data-michelin
-var lineReader = require('readline').createInterface({
-    input: require('fs').createReadStream('./data-michelin.json')
-});
-
 //Checking if file exists to clear
 if (fs.existsSync('./data-fourchette.json')) {
     fs.truncate('data-fourchette.json', 0, function() {})
 }
+
+//Reading lines from scrapped data-michelin
+var lineReader = require('readline').createInterface({
+    input: require('fs').createReadStream('./data-michelin.json')
+});
 
 lineReader.on('line', function(line) {
     var restaurantToFind = JSON.parse(line);
